@@ -1,0 +1,44 @@
+model:
+  d_model: 1024
+  n_layer: 24
+  d_state: 16
+  d_conv: 3
+  expand: 2
+  use_attnres: true
+  block_size: 4
+  use_ledger: true
+  ledger_heads: 8
+  mimo_rank: 2
+  use_gradient_checkpointing: true
+  use_moe: true
+  n_experts: 8
+  n_active_experts: 2
+  use_complex_rope: true
+  context_window: 131072
+  use_deep_think: true
+  deep_think_steps: 3
+  sr_scale: 0.001
+  privacy_sigma: 1.2
+  ledger_dropout: 0.15
+  rbf_num_centers: 8
+  adp_threshold: 0.5
+
+training:
+  batch_size: 2
+  gradient_accumulation: 8
+  lr: 3.0e-4
+  warmup_steps: 500
+  max_steps: 50000
+  mixed_precision: bf16
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  save_every: 1000
+  eval_every: 500
+
+inference:
+  deep_thinking_steps: 120
+  convergence_threshold: 0.001
+  sanitize_input: true
+  temperature: 0.7
+  top_k: 50
+  top_p: 0.9

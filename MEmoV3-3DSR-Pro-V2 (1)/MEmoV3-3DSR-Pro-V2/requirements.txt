@@ -1,0 +1,17 @@
+torch>=2.4.0
+triton>=3.0.0
+transformers
+webdataset
+einops
+numpy
+safetensors
+accelerate
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0
+kaleido>=0.2.1
+reportlab
+scipy
+pyyaml
+tqdm
+Pillow
